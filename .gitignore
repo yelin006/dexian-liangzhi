@@ -1,0 +1,12 @@
+# IDE
+.idea/
+.vscode/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Temp
+.vercel-tmp/
+node_modules/

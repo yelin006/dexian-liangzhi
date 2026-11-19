@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>得闲良制 — 以草木之名，养东方之气</title>
+    <link rel="stylesheet" href="product.css?v=14">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+    <!-- 古纸纹理 -->
+    <div class="paper-texture"></div>
+
+    <!-- 水墨粒子背景 -->
+    <canvas id="inkCanvas"></canvas>
+
+    <!-- 导航 -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <div class="logo">得闲良制</div>
+            <div class="nav-links">
+                <a href="#page-1" class="active" data-page="0">首页</a>
+                <a href="#page-2" data-page="1">理念</a>
+                <a href="#page-3" data-page="2">茶品</a>
+                <a href="#page-4" data-page="3">故事</a>
+                <a href="#page-5" data-page="4">匠心</a>
+                <a href="#page-6" data-page="5">联系</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 分页指示器 -->
+    <div class="page-dots" id="pageDots">
+        <div class="dot active" data-page="0"></div>
+        <div class="dot" data-page="1"></div>
+        <div class="dot" data-page="2"></div>
+        <div class="dot" data-page="3"></div>
+        <div class="dot" data-page="4"></div>
+        <div class="dot" data-page="5"></div>
+    </div>
+
+    <!-- 第1页：首页封面 -->
+    <section id="page-1" class="page">
+        <div class="page-content">
+            <p class="hero-subtitle">东方草本茶事</p>
+            <h1 class="hero-title">
+                <span class="char">得</span><span class="char">闲</span><span class="char">良</span><span class="char">制</span>
+            </h1>
+            <p class="hero-desc">以草木之名，养东方之气</p>
+            <div class="hero-line"></div>
+            <p class="hero-verse">一盏茶的时间，足以让尘世安静下来</p>
+            <a href="#page-3" class="hero-cta"> explore 茶品 </a>
+        </div>
+        <div class="scroll-hint">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- 第2页：品牌理念 -->
+    <section id="page-2" class="page">
+        <div class="page-content">
+            <div class="philosophy-text">
+                <h2>四气调神</h2>
+                <p class="philosophy-sub">清 · 润 · 安 · 养</p>
+                <p class="philosophy-desc">
+                    取法自然，顺应四时。清以疏达，润以濡养，安以定神，养以固本。<br>
+                    每一味草本，皆从山水间来；每一盏茶汤，都是与身体的温柔对话。
+                </p>
+            </div>
+            <div class="series-icons">
+                <div class="series-icon" data-series="清">
+                    <div class="icon-circle" style="--c:#4a7c59">
+                        <span>清</span>
+                    </div>
+                    <p>疏达三焦</p>
+                </div>
+                <div class="series-icon" data-series="润">
+                    <div class="icon-circle" style="--c:#b8973d">
+                        <span>润</span>
+                    </div>
+                    <p>生津润燥</p>
+                </div>
+                <div class="series-icon" data-series="安">
+                    <div class="icon-circle" style="--c:#7a5c8a">
+                        <span>安</span>
+                    </div>
+                    <p>宁心安神</p>
+                </div>
+                <div class="series-icon" data-series="养">
+                    <div class="icon-circle" style="--c:#b54a5a">
+                        <span>养</span>
+                    </div>
+                    <p>补气养血</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第3页：茶品名录 -->
+    <section id="page-3" class="page">
+        <div class="page-content">
+            <div class="section-header">
+                <h2>茶品名录</h2>
+                <p class="section-sub">八味草本，八段心境</p>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="清">清系列</button>
+                <button class="filter-btn" data-filter="润">润系列</button>
+                <button class="filter-btn" data-filter="安">安系列</button>
+                <button class="filter-btn" data-filter="养">养系列</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <!-- 第4页：品类故事 -->
+    <section id="page-4" class="page">
+        <div class="page-content">
+            <div class="section-header">
+                <h2>一味一境</h2>
+                <p class="section-sub">八味草本，八段心境</p>
+            </div>
+            <div class="story-slider" id="storySlider">
+                <div class="story-slider-track" id="storySliderTrack">
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/qing-yunping.png" alt="清·云屏">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#4a7c59;background:rgba(74,124,89,0.08);border:1px solid #4a7c5922">清系列</span>
+                                <h3>清 · 云屏</h3>
+                                <p class="story-subtitle">乌梅桑椹三焦茶</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">晨风穿透过身体，无一处滞碍。推窗见雾气未散、草木初醒，清朗之气贯通全身，积攒的沉郁一并交给了风。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/run-luozhan.png" alt="润·螺盏">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#b8973d;background:rgba(184,151,61,0.08);border:1px solid #b8973d22">润系列</span>
+                                <h3>润 · 螺盏</h3>
+                                <p class="story-subtitle">玉竹麦冬生津水</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">不急，一切慢慢润泽。玉竹与麦冬如山间清泉，缓缓流入干渴的土地。梅雨午后，水汽温柔包裹，给身体下一场及时雨。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/an-chenyan.png" alt="安·沉烟">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#7a5c8a;background:rgba(122,92,138,0.08);border:1px solid #7a5c8a22">安系列</span>
+                                <h3>安 · 沉烟</h3>
+                                <p class="story-subtitle">酸枣仁百合代用茶</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">夜阑人静，烛火将尽未尽。窗外梧桐叶落，屋内一灯如豆，半页书未翻完便困意袭来。一杯安茶，像是有人轻轻掩上了世界的门。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/yang-huadian.png" alt="养·花钿">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#b54a5a;background:rgba(181,74,90,0.08);border:1px solid #b54a5a22">养系列</span>
+                                <h3>养 · 花钿</h3>
+                                <p class="story-subtitle">苹果玫瑰黄芪代用茶</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">对镜理妆，花钿贴额，胭脂匀颊，一天的好气色从此开始。容光焕发，从容面对每一日，给身体细细描一笔妆。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/qing-xiechai.png" alt="清·卸钗">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#4a7c59;background:rgba(74,124,89,0.08);border:1px solid #4a7c5922">清系列</span>
+                                <h3>清 · 卸钗</h3>
+                                <p class="story-subtitle">苹果山楂代用茶</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">宴席散场，车马声渐远。卸下钗环的那一刻，灯火阑珊处，世界重归简单明净。苹果的清甜与山楂的微酸，拂去尘嚣，还一身清朗。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/yang-shoulu.jpg" alt="养·手炉">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#a04040;background:rgba(160,64,64,0.08);border:1px solid #a0404022">养系列</span>
+                                <h3>养 · 手炉</h3>
+                                <p class="story-subtitle">双参元气代用茶</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">寒冬腊月，袖底藏一炉温热。人参党参双参入茶，风再大，心底始终有一团从容的底气。一口暖茶，便是风雪中最妥帖的慰藉。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/yang-suwan.png" alt="养·素纨">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#c47a3a;background:rgba(196,122,58,0.08);border:1px solid #c47a3a22">养系列</span>
+                                <h3>养 · 素纨</h3>
+                                <p class="story-subtitle">满满维C代用茶</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">素纨上的花影还未干，盏中的刺梨已浮起一山秋色。满满维C如秋阳般明媚清亮，给身体一场元气满满的温柔补给。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-slide">
+                        <div class="story-slide-inner">
+                            <div class="story-slide-image">
+                                <img src="images/yang-yanzhi.png" alt="养·胭脂">
+                            </div>
+                            <div class="story-slide-text">
+                                <span class="story-series" style="color:#b54a5a;background:rgba(181,74,90,0.08);border:1px solid #b54a5a22">养系列</span>
+                                <h3>养 · 胭脂</h3>
+                                <p class="story-subtitle">红参亚麻籽无花果代用茶</p>
+                                <div class="story-line"></div>
+                                <p class="story-desc">腕上一抹试色，红得恰好，不艳不淡。红参温润，无花果甘甜，养出由内而外的自然好气色，一日从容从此开始。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow slider-prev" id="sliderPrev">‹</button>
+                <button class="slider-arrow slider-next" id="sliderNext">›</button>
+                <div class="slider-dots" id="sliderDots">
+                    <span class="slider-dot active"></span>
+                    <span class="slider-dot"></span>
+                    <span class="slider-dot"></span>
+                    <span class="slider-dot"></span>
+                    <span class="slider-dot"></span>
+                    <span class="slider-dot"></span>
+                    <span class="slider-dot"></span>
+                    <span class="slider-dot"></span>
+                </div>
+                <p class="slider-hint">← 左右滑动或拖拽切换 →</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第5页：制茶匠心 -->
+    <section id="page-5" class="page">
+        <div class="page-content craft-content">
+            <div class="craft-header">
+                <h2>制茶匠心</h2>
+                <p class="craft-sub">古法今用，以时为贵</p>
+            </div>
+            <div class="craft-steps">
+                <div class="craft-step">
+                    <span class="step-num">壹</span>
+                    <h4>择时采收</h4>
+                    <p>顺应节气，在草本药性最盛之时采摘，不早不晚，恰好当时。</p>
+                </div>
+                <div class="craft-step">
+                    <span class="step-num">贰</span>
+                    <h4>自然晾晒</h4>
+                    <p>不烘不烤，以阳光与微风慢慢收干水分，保留草木本真之气。</p>
+                </div>
+                <div class="craft-step">
+                    <span class="step-num">叁</span>
+                    <h4>古法配伍</h4>
+                    <p>依循传统方剂，君臣佐使，各安其位，相辅相成。</p>
+                </div>
+                <div class="craft-step">
+                    <span class="step-num">肆</span>
+                    <h4>慢火细熬</h4>
+                    <p>低温萃取，让每一味草本的精华缓缓释出，不急不躁。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第6页：联系 -->
+    <section id="page-6" class="page">
+        <div class="page-content contact-content">
+            <div class="contact-brand">
+                <h2>得闲良制</h2>
+                <p>以草木之名，养东方之气</p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">品牌理念</span>
+                    <p>取法自然，顺应四时<br>清以疏达，润以濡养，安以定神，养以固本</p>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">产品系列</span>
+                    <p>清系列 · 润系列 · 安系列 · 养系列<br>八味草本，八段心境</p>
+                </div>
+            </div>
+            <p class="copyright">概念展示页面 · 图片仅供设计参考</p>
+        </div>
+    </section>
+
+    <!-- 产品详情弹窗 -->
+    <div id="productModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <div class="modal-image-wrap" id="modalImageWrap">
+                        <img id="modalImg" src="" alt="">
+                        <div class="magnifier-lens" id="magnifierLens"></div>
+                        <span class="magnifier-hint">移动鼠标查看细节</span>
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <span class="modal-series" id="modalSeries"></span>
+                    <h3 id="modalName"></h3>
+                    <p class="modal-subtitle" id="modalSubtitle"></p>
+                    <div class="modal-divider"></div>
+                    <p class="modal-desc" id="modalDesc"></p>
+                    <p class="modal-extra" id="modalExtra"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="product.js?v=14"></script>
+</body>
+</html>
